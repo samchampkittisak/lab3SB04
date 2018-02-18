@@ -69,9 +69,12 @@ public class MainActivity extends Activity {
         buttonset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mCounter = Integer.valueOf(editset.getText().toString());
-                if (mCounter > 100000)
+                if (editset.getText().toString().length() == 0) {
+                    mCounter = 0;
+                } else if (editset.getText().toString().length() >= 6)
                     mCounter = 100000;
+                else
+                    mCounter = Integer.valueOf(editset.getText().toString());
                 st = "";
                 num = mCounter;
                 if (num == 0) {
@@ -183,7 +186,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 mCounter += 1000;
-                if(mCounter>100000){
+                if (mCounter > 100000) {
                     mCounter = 100000;
                 }
                 st = "";
@@ -201,7 +204,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 mCounter += 100;
-                if(mCounter>100000){
+                if (mCounter > 100000) {
                     mCounter = 100000;
                 }
                 st = "";
@@ -219,7 +222,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 mCounter += 10;
-                if(mCounter>100000){
+                if (mCounter > 100000) {
                     mCounter = 100000;
                 }
                 st = "";
@@ -238,7 +241,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 mCounter++;
-                if(mCounter>100000){
+                if (mCounter > 100000) {
                     mCounter = 100000;
                 }
                 st = "";
